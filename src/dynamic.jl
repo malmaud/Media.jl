@@ -52,9 +52,9 @@ function dynamic_eq(def)
   name, val = def.args
   if isexpr(name, :(::))
     name, T = name.args
-    :(const $(esc(name)) = Binding{$(esc(T))}($(esc(val))))
+    :($(esc(name)) = Binding{$(esc(T))}($(esc(val))))
   else
-    :(const $(esc(name)) = Binding($(esc(val))))
+    :($(esc(name)) = Binding($(esc(val))))
   end
 end
 
